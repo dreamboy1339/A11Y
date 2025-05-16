@@ -78,11 +78,28 @@ class MainActivity : ComponentActivity() {
                         Spacer(modifier = Modifier.size(16.dp))
 
                         ExpandableView(title = "ExpandableView")
+
+                        Spacer(modifier = Modifier.size(16.dp))
+
+                        OptimalFocus()
+
+                        Spacer(modifier = Modifier.size(16.dp))
+
+                        TextList()
+
+                        Spacer(modifier = Modifier.size(16.dp))
+
+                        SpeakList()
+
+                        Spacer(modifier = Modifier.size(16.dp))
+
+                        LoadingExample()
                     }
                 }
             }
         }
     }
+
 }
 
 @Preview(showBackground = true)
