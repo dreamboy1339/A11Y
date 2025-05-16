@@ -74,6 +74,10 @@ class MainActivity : ComponentActivity() {
                             onDismiss = { isDialogVisible = false },
                             onAction = { isDialogVisible = false }
                         )
+
+                        Spacer(modifier = Modifier.size(16.dp))
+
+                        ExpandableView(title = "ExpandableView")
                     }
                 }
             }
