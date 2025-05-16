@@ -35,6 +35,10 @@ class MainActivity : ComponentActivity() {
                     Column(modifier = Modifier.padding(innerPadding)) {
                         BasicA11y(name = "A11J", contentDescription = "내 프로필")
                         Profile(name = "나는 개발자", role = "안드로이드 개발자", contentDescription = "내 프로필")
+                        SwipeToDismissDemo(
+                            item = "todo",
+                            onDelete = { }
+                        )
                     }
                 }
             }
