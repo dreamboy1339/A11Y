@@ -10,7 +10,11 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.onClick
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.hjw.app.a11y.ui.theme.A11YTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,7 +24,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             A11YTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
+                    BasicA11y(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -31,10 +35,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun BasicA11y(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
         modifier = modifier
+            .padding(16.dp)
+            .semantics {
+                contentDescription = "A simple button that says hello"
+            }
     )
 }
 
@@ -42,6 +50,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     A11YTheme {
-        Greeting("Android")
+        BasicA11y("Android")
     }
 }
